@@ -1,5 +1,9 @@
-const mix = require('laravel-mix');
-
+const path          = require('path')
+const mix           = require('laravel-mix')
+const webpack       = require('webpack')
+const { version }   = require('./package.json')
+const WebpackBar    = require('webpackbar')
+// const OfflinePlugin = require('offline-plugin')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,3 +17,12 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js').vue();
 mix.sass('resources/sass/app.scss', 'public/css');
+mix.webpackConfig({
+    devServer: { disableHostCheck: true },
+    resolve  : {
+        alias: {
+            '@'         : path.resolve(__dirname, 'resources/js/notus/'),
+            //'static'    : path.resolve(__dirname, 'resources/static/'),
+            'validators': 'vuelidate/lib/validators',
+        },
+    }});
