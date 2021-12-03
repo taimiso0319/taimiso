@@ -1,37 +1,33 @@
 import { createApp } from "vue";
 import { createWebHistory, createRouter } from "vue-router";
 
-// styles
-
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./assets/styles/tailwind.css";
 
 // mouting point for the whole app
 
-import App from "./App";
+import App from "@/App";
 
 // layouts
 
-import Admin from "./layouts/Admin";
-import Auth from "./layouts/Auth";
+import Admin from "@/layouts/Admin";
+import Auth from "@/layouts/Auth";
 
 // views for Admin layout
 
-import Dashboard from "./views/admin/Dashboard";
-import Settings from "./views/admin/Settings";
-import Tables from "./views/admin/Tables";
-import Maps from "./views/admin/Maps";
+import Dashboard from "@/views/admin/Dashboard";
+import Settings from "@/views/admin/Settings";
+import Tables from "@/views/admin/Tables";
+import Maps from "@/views/admin/Maps";
 
 // views for Auth layout
 
-import Login from "./views/auth/Login";
-import Register from "./views/auth/Register";
+import Login from "@/views/auth/Login";
+import Register from "@/views/auth/Register";
 
 // views without layouts
 
-import Landing from "./views/Landing";
-import Profile from "./views/Profile";
-import Index from "./views/Index";
+import Landing from "@/views/Landing";
+import Profile from "@/views/Profile";
+import Index from "@/views/Index";
 
 // routes
 

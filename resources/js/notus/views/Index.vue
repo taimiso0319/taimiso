@@ -751,17 +751,17 @@
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 
-import patternVue from "@/assets/img/pattern_vue.png";
-import componentBtn from "@/assets/img/component-btn.png";
-import componentProfileCard from "@/assets/img/component-profile-card.png";
-import componentInfoCard from "@/assets/img/component-info-card.png";
-import componentInfo2 from "@/assets/img/component-info-2.png";
-import componentMenu from "@/assets/img/component-menu.png";
-import componentBtnPink from "@/assets/img/component-btn-pink.png";
-import documentation from "@/assets/img/documentation.png";
-import login from "@/assets/img/login.jpg";
-import profile from "@/assets/img/profile.jpg";
-import landing from "@/assets/img/landing.jpg";
+import patternVue from "static/img/notus/pattern_vue.png";
+import componentBtn from "static/img/notus/component-btn.png";
+import componentProfileCard from "static/img/notus/component-profile-card.png";
+import componentInfoCard from "static/img/notus/component-info-card.png";
+import componentInfo2 from "static/img/notus/component-info-2.png";
+import componentMenu from "static/img/notus/component-menu.png";
+import componentBtnPink from "static/img/notus/component-btn-pink.png";
+import documentation from "static/img/notus/documentation.png";
+import login from "static/img/notus/login.jpg";
+import profile from "static/img/notus/profile.jpg";
+import landing from "static/img/notus/landing.jpg";
 
 export default {
   data() {
