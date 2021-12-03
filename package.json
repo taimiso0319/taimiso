@@ -16,9 +16,10 @@
         "eslint": "7.22.0",
         "eslint-plugin-vue": "7.7.0",
         "laravel-mix": "^6.0.6",
+        "offline-plugin": "^5.0.7",
         "postcss": "^8.4.4",
-        "webpackbar": "^5.0.2",
-        "vue-loader": "^16.1.2"
+        "vue-loader": "^16.1.2",
+        "webpackbar": "^5.0.2"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.15.3",

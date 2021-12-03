@@ -3,7 +3,7 @@ const mix           = require('laravel-mix')
 const webpack       = require('webpack')
 const { version }   = require('./package.json')
 const WebpackBar    = require('webpackbar')
-// const OfflinePlugin = require('offline-plugin')
+//const OfflinePlugin = require('offline-plugin')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -22,7 +22,22 @@ mix.webpackConfig({
     resolve  : {
         alias: {
             '@'         : path.resolve(__dirname, 'resources/js/notus/'),
-            //'static'    : path.resolve(__dirname, 'resources/static/'),
-            'validators': 'vuelidate/lib/validators',
+            'static'    : path.resolve(__dirname, 'resources/static/'),
         },
-    }});
+    },
+    plugins: [
+        new WebpackBar({ profile: true }),
+        new webpack.DefinePlugin({ __VERSION: JSON.stringify(version) }),
+    ],
+});
+
+mix.extract([
+    'axios',
+    'bootstrap',
+    'chart.js',
+    'lodash',
+    'popper.js',
+    'select2',
+    'vue',
+    'vue-router',
+])
