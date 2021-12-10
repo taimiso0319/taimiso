@@ -21,7 +21,7 @@ mix.webpackConfig({
     devServer: { disableHostCheck: true },
     resolve  : {
         alias: {
-            '@'         : path.resolve(__dirname, 'resources/js/notus/'),
+            '@'         : path.resolve(__dirname, 'resources/js/'),
             'static'    : path.resolve(__dirname, 'resources/static/'),
         },
     },

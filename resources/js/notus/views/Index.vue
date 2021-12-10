@@ -748,8 +748,8 @@
   </div>
 </template>
 <script>
-import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
+import IndexNavbar from "@/notus/components/Navbars/IndexNavbar.vue";
+import FooterComponent from "@/notus/components/Footers/Footer.vue";
 
 import patternVue from "static/img/notus/pattern_vue.png";
 import componentBtn from "static/img/notus/component-btn.png";

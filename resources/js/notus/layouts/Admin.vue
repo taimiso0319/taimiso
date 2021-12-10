@@ -12,10 +12,10 @@
   </div>
 </template>
 <script>
-import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
-import Sidebar from "@/components/Sidebar/Sidebar.vue";
-import HeaderStats from "@/components/Headers/HeaderStats.vue";
-import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
+import AdminNavbar from "@/notus/components/Navbars/AdminNavbar.vue";
+import Sidebar from "@/notus/components/Sidebar/Sidebar.vue";
+import HeaderStats from "@/notus/components/Headers/HeaderStats.vue";
+import FooterAdmin from "@/notus/components/Footers/FooterAdmin.vue";
 export default {
   name: "admin-layout",
   components: {

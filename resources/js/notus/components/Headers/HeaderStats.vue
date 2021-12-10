@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import CardStats from "@/components/Cards/CardStats.vue";
+import CardStats from "@/notus/components/Cards/CardStats.vue";
 
 export default {
   components: {
