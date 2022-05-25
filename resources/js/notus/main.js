@@ -4,34 +4,35 @@ import { createWebHistory, createRouter } from "vue-router";
 
 // mouting point for the whole app
 
-import App from "@/App";
+import App from "@/notus/App";
 
 // layouts
-
-import Admin from "@/layouts/Admin";
-import Auth from "@/layouts/Auth";
+/*
+import Admin from "@/notus/layouts/Admin";
+import Auth from "@/notus/layouts/Auth";
 
 // views for Admin layout
 
-import Dashboard from "@/views/admin/Dashboard";
-import Settings from "@/views/admin/Settings";
-import Tables from "@/views/admin/Tables";
-import Maps from "@/views/admin/Maps";
+import Dashboard from "@/notus/views/admin/Dashboard";
+import Settings from "@/notus/views/admin/Settings";
+import Tables from "@/notus/views/admin/Tables";
+import Maps from "@/notus/views/admin/Maps";
 
 // views for Auth layout
 
-import Login from "@/views/auth/Login";
-import Register from "@/views/auth/Register";
-
+import Login from "@/notus/views/auth/Login";
+import Register from "@/notus/views/auth/Register";
+*/
 // views without layouts
 
-import Landing from "@/views/Landing";
-import Profile from "@/views/Profile";
-import Index from "@/views/Index";
+import Landing from "@/notus/views/Landing";
+import Profile from "@/notus/views/Profile";
+import Index from "@/notus/views/Index";
 
 // routes
 
 const routes = [
+/*
   {
     path: "/admin",
     redirect: "/admin/dashboard",
@@ -55,7 +56,8 @@ const routes = [
       },
     ],
   },
-  {
+*/
+/*  {
     path: "/auth",
     redirect: "/auth/login",
     component: Auth,
@@ -70,6 +72,7 @@ const routes = [
       },
     ],
   },
+ */
   {
     path: "/landing",
     component: Landing,
@@ -80,7 +83,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Index,
+    redirect: "/landing",
   },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];

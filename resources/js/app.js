@@ -4,8 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require('./notus/main');
+require('@/bootstrap');
+require('@/notus/main');
 
 // window.Vue = require('vue').default;
 

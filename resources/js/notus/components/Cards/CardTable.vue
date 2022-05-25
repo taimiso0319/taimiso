@@ -474,7 +474,7 @@
   </div>
 </template>
 <script>
-import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
+import TableDropdown from "@/notus/components/Dropdowns/TableDropdown.vue";
 
 import bootstrap from "static/img/notus/bootstrap.jpg";
 import angular from "static/img/notus/angular.jpg";

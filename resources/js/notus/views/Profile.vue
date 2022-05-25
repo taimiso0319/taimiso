@@ -148,8 +148,8 @@
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
+import Navbar from "@/notus/components/Navbars/AuthNavbar.vue";
+import FooterComponent from "@/notus/components/Footers/Footer.vue";
 
 import team2 from "static/img/notus/team-2-800x800.jpg";
 
