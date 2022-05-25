@@ -7,7 +7,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import App from "@/notus/App";
 
 // layouts
-
+/*
 import Admin from "@/notus/layouts/Admin";
 import Auth from "@/notus/layouts/Auth";
 
@@ -22,7 +22,7 @@ import Maps from "@/notus/views/admin/Maps";
 
 import Login from "@/notus/views/auth/Login";
 import Register from "@/notus/views/auth/Register";
-
+*/
 // views without layouts
 
 import Landing from "@/notus/views/Landing";
@@ -32,6 +32,7 @@ import Index from "@/notus/views/Index";
 // routes
 
 const routes = [
+/*
   {
     path: "/admin",
     redirect: "/admin/dashboard",
@@ -55,7 +56,8 @@ const routes = [
       },
     ],
   },
-  {
+*/
+/*  {
     path: "/auth",
     redirect: "/auth/login",
     component: Auth,
@@ -70,6 +72,7 @@ const routes = [
       },
     ],
   },
+ */
   {
     path: "/landing",
     component: Landing,
@@ -80,7 +83,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Index,
+    redirect: "/landing",
   },
   { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
