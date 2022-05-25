@@ -17,8 +17,20 @@ const WebpackBar    = require('webpackbar')
 
 mix.js('resources/js/app.js', 'public/js').vue();
 mix.sass('resources/sass/app.scss', 'public/css');
+
 mix.webpackConfig({
-    devServer: { disableHostCheck: true },
+    devServer: {
+        allowedHosts: "all",
+        host: 'localhost',
+        port: 8080,
+        static: {
+
+        },
+    },
+    watchOptions: {
+        poll: 2000,
+        ignored: /node_modules/
+    },
     resolve  : {
         alias: {
             '@'         : path.resolve(__dirname, 'resources/js/'),
@@ -30,7 +42,12 @@ mix.webpackConfig({
         new webpack.DefinePlugin({ __VERSION: JSON.stringify(version) }),
     ],
 });
-
+mix.options({
+    hmrOptions: {
+        host: 'localhost',
+        port: 8080,
+    }
+});
 mix.extract([
     'axios',
     'bootstrap',
