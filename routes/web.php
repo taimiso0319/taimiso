@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{vue_capture?}', 'AppController@index')
+Route::get('/{vue_capture?}', [AppController::class,'index'])
     #->middleware(['speed'])
     ->where('vue_capture', '[\/\w\.\,\-]*');
