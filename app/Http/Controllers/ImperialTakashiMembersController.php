@@ -52,7 +52,6 @@ class ImperialTakashiMembersController extends Controller
 
         $imperialTakashiMemberModel = new ImperialTakashiMember();
 
-
         // id指定があればそれだけ取り出す。
         $id = $request->input('id');
         if( $id === null){
