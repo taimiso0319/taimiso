@@ -15,11 +15,11 @@
         <member-card v-for="profile in profiles"
            :key="profile.twitter.name"
            :name="profile.twitter.name"
-           :banner-url="profile.twitter.profile_banner_url | makeTwitterBannerUrl()"
-           :twitter-url="profile.twitterId | makeTwitterIconUrl()"
-           :steam-url="profile.steamId64 | makeSteamUrl()"
-           :youtube-url="profile.youtubeChannelId | makeYouTubeUrl()"
-           :thumbnail-url="profile.twitter.profile_image_url_https | replaceTwitterIconUrl()"
+           :banner-url="twitter.makeTwitterBannerUrl(profile.twitter.profile_banner_url)"
+           :twitter-url="twitter.makeTwitterIconUrl(profile.twitterId)"
+           :steam-url="twitter.makeSteamUrl(profile.steamId64)"
+           :youtube-url="twitter.makeYouTubeUrl(profile.youtubeChannelId)"
+           :thumbnail-url="twitter.replaceTwitterIconUrl(profile.twitter.profile_image_url_https)"
            :description="profile.twitter.description"
         />
       </div>
@@ -30,30 +30,15 @@
 <script>
 import { RepositoryFactory } from '@/utils/repositories/repository-factory'
 import MemberCard from "@/notus/components/Members/MemberCard";
+import twitter from '@/utils/filters/twitter-url-filter';
 const membersRepository = RepositoryFactory.get('members')
 export default {
   name      : 'Members',
   components: { MemberCard },
-  filters   : {
-    replaceTwitterIconUrl: function (value) {
-      return value.replace('_normal', '_200x200')
-    },
-    makeTwitterIconUrl: function (value) {
-      if (value !== null) return `https://twitter.com/i/user/${value}`
-      return null
-    },
-    makeTwitterBannerUrl: function (value) {
-      if (value !== null) return `${value}/600x200`
-      return `https://pbs.twimg.com/profile_banners/800415710040076288/1548306383/600x200`
-    },
-    makeYouTubeUrl: function (value) {
-      if (value !== null) return `https://www.youtube.com/channel/${value}`
-      return null
-    },
-    makeSteamUrl: function (value) {
-      if (value !== null) return `http://steamcommunity.com/profiles/${value}`
-      return null
-    },
+  setup(){
+    return {
+      twitter
+    }
   },
   data: function () {
     return {
