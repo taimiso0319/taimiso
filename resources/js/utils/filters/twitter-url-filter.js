@@ -8,8 +8,8 @@ export  default {
     return null
 },
     makeTwitterBannerUrl (value) {
-    if (value !== null) return `${value}/600x200`
-    return `https://pbs.twimg.com/profile_banners/800415710040076288/1548306383/600x200`
+    if (value !== null) return `${value}/web_retina`
+    return `https://pbs.twimg.com/profile_banners/800415710040076288/1548306383/web_retina`
 },
   makeYouTubeUrl (value) {
     if (value !== null) return `https://www.youtube.com/channel/${value}`

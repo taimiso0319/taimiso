@@ -78,8 +78,9 @@ const routes = [
     component: Landing,
   },
   {
-    path: "/profile",
+    path: "/profile/:id(\\d+)",
     component: Profile,
+    props: true,
   },
   {
     path: "/",

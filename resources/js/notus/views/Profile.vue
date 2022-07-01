@@ -5,9 +5,7 @@
       <section class="relative block h-500-px">
         <div
           class="absolute top-0 w-full h-full bg-center bg-cover"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80');
-          "
+          v-bind:style="{ backgroundImage: 'url(' + profile.twitter.profile_banner_url + ')' }"
         >
           <span
             id="blackOverlay"
@@ -46,8 +44,9 @@
                 >
                   <div class="relative">
                     <img
+                      v-show="!isLoading"
                       alt="..."
-                      :src="team2"
+                      :src="profile.twitter.profile_image_url_https"
                       class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                     />
                   </div>
@@ -60,7 +59,7 @@
                       class="bg-emerald-500 active:bg-emerald-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                       type="button"
                     >
-                      Connect
+                      connect
                     </button>
                   </div>
                 </div>
@@ -70,34 +69,35 @@
                       <span
                         class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
                       >
-                        22
+                        <div v-show="!isLoading">{{ profile.twitter.followers_count }}</div>
                       </span>
-                      <span class="text-sm text-blueGray-400">Friends</span>
+                      <span class="text-sm text-blueGray-400">Followers</span>
                     </div>
                     <div class="mr-4 p-3 text-center">
                       <span
                         class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
                       >
-                        10
+                        <div v-show="!isLoading">{{ profile.twitter.friends_count }}</div>
                       </span>
-                      <span class="text-sm text-blueGray-400">Photos</span>
+                      <span class="text-sm text-blueGray-400">Follows</span>
                     </div>
                     <div class="lg:mr-4 p-3 text-center">
                       <span
                         class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
                       >
-                        89
+                        <div v-show="!isLoading">{{ profile.twitter.statuses_count}}</div>
                       </span>
-                      <span class="text-sm text-blueGray-400">Comments</span>
+                      <span class="text-sm text-blueGray-400">Tweets</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="text-center mt-12">
                 <h3
+                    v-show="!isLoading"
                   class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2"
                 >
-                  Jenna Stones
+                  {{this.profile.twitter.name}}
                 </h3>
                 <div
                   class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
@@ -123,12 +123,8 @@
               <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
                 <div class="flex flex-wrap justify-center">
                   <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                      An artist of considerable range, Jenna the name taken by
-                      Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                      performs and records all of his own music, giving it a
-                      warm, intimate feel with a solid groove structure. An
-                      artist of considerable range.
+                    <p v-show="!isLoading" class="mb-4 text-lg leading-relaxed text-blueGray-700">
+                      {{this.profile.twitter.description}}
                     </p>
                     <a
                       href="javascript:void(0)"
@@ -148,20 +144,68 @@
   </div>
 </template>
 <script>
+
 import Navbar from "@/notus/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/notus/components/Footers/Footer.vue";
 
 import team2 from "static/img/notus/team-2-800x800.jpg";
 
+import { RepositoryFactory } from '@/utils/repositories/repository-factory'
+import twitter from '@/utils/filters/twitter-url-filter';
+const membersRepository = RepositoryFactory.get('members')
+
 export default {
+  props:{
+    id: Number,
+  },
+  setup(){
+    return {
+      twitter
+    }
+  },
   data() {
     return {
       team2,
+      profile : {
+        twitterId: String,
+        twitter:{
+          name: String,
+          description: String,
+          profile_image_url_https: String,
+          profile_banner_url: String,
+          followers_count: Number,
+          friends_count: Number,
+          statuses_count: Number,
+        }
+      },
+      isLoading: false,
     };
   },
   components: {
     Navbar,
     FooterComponent,
+  },
+  mounted: function () {
+    this.fetch()
+  },
+  methods: {
+    async fetch () {
+      this.isLoading = true
+      const { data } = await membersRepository.getMember(this.id)
+      this.isLoading = false
+      this.apply(data)
+    },
+
+    apply (data){
+      this.profile.twitterId = data[0].twitterId
+      this.profile.twitter.profile_image_url_https = twitter.replaceTwitterIconUrl(data[0].twitter.profile_image_url_https)
+      this.profile.twitter.profile_banner_url=twitter.makeTwitterBannerUrl(data[0].twitter.profile_banner_url)
+      this.profile.twitter.name = data[0].twitter.name
+      this.profile.twitter.description = data[0].twitter.description
+      this.profile.twitter.followers_count = data[0].twitter.followers_count.toLocaleString()
+      this.profile.twitter.friends_count = data[0].twitter.friends_count.toLocaleString()
+      this.profile.twitter.statuses_count = data[0].twitter.statuses_count.toLocaleString()
+     }
   },
 };
 </script>

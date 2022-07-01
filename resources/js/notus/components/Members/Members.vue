@@ -14,6 +14,7 @@
       <div class="flex flex-wrap">
         <member-card v-for="profile in profiles"
            :key="profile.twitter.name"
+           :id="profile.id"
            :name="profile.twitter.name"
            :banner-url="twitter.makeTwitterBannerUrl(profile.twitter.profile_banner_url)"
            :twitter-url="twitter.makeTwitterIconUrl(profile.twitterId)"
@@ -52,7 +53,7 @@ export default {
   methods: {
     async fetch () {
       this.isLoading = true
-      const { data } = await membersRepository.getMembers()
+      const { data } = await membersRepository.getAllMembers()
       this.isLoading = false
       this.profiles  = data
     },
