@@ -109,6 +109,7 @@
                   {{ this.profile.twitter.name }}
                 </h3>
                 <div
+                    v-show="!isLoading"
                     class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
                 >
                   <i
