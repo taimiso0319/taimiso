@@ -114,8 +114,9 @@
                   <i
                       class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"
                   ></i>
-                  Los Angeles, California
+                  {{ this.profile.twitter.location }}
                 </div>
+                <!--
                 <div class="mb-2 text-blueGray-600 mt-10">
                   <i
                       class="fas fa-briefcase mr-2 text-lg text-blueGray-400"
@@ -128,6 +129,7 @@
                   ></i>
                   University of Computer Science
                 </div>
+                -->
               </div>
               <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
                 <div class="flex flex-wrap justify-center">
@@ -154,7 +156,7 @@
 </template>
 <script>
 
-import Navbar from "@/notus/components/Navbars/AuthNavbar.vue";
+import Navbar from "@/notus/components/Navbars/NavigationBar.vue";
 import FooterComponent from "@/notus/components/Footers/Footer.vue";
 
 import team2 from "static/img/notus/team-2-800x800.jpg";
@@ -195,6 +197,7 @@ export default {
           followers_count: Number,
           friends_count: Number,
           statuses_count: Number,
+          location: String,
         }
       },
       isLoading: false,
@@ -221,6 +224,7 @@ export default {
       this.profile.twitter.profile_image_url_https = twitter.replaceTwitterIconUrl(data[0].twitter.profile_image_url_https)
       this.profile.twitter.profile_banner_url = twitter.makeTwitterBannerUrl(data[0].twitter.profile_banner_url)
       this.profile.twitter.name = data[0].twitter.name
+      this.profile.twitter.location = data[0].twitter.location
       this.profile.twitter.description = data[0].twitter.description
       this.profile.twitter.followers_count = data[0].twitter.followers_count.toLocaleString()
       this.profile.twitter.friends_count = data[0].twitter.friends_count.toLocaleString()

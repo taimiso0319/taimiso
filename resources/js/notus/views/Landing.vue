@@ -8,12 +8,12 @@
         <div
           class="absolute top-0 w-full h-full bg-center bg-cover"
           style="
-            background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+            background-image: url('https://live.staticflickr.com/65535/52285337295_8d491fd3a7_b.jpg');
           "
         >
           <span
             id="blackOverlay"
-            class="w-full h-full absolute opacity-75 bg-black"
+            class="w-full h-full absolute opacity-50 bg-black"
           ></span>
         </div>
         <div class="container relative mx-auto">
@@ -46,13 +46,13 @@
             y="0"
           >
             <polygon
-              class="text-blueGray-200 fill-current"
+              class="text-white fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
       </div>
-
+      <!--
       <section class="pb-20 bg-blueGray-200 -mt-24">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap">
@@ -178,7 +178,8 @@
           </div>
         </div>
       </section>
-
+      -->
+      <!--
       <section class="relative py-20">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
@@ -275,7 +276,7 @@
           </div>
         </div>
       </section>
-
+      -->
       <members></members>
 
       <section class="pb-20 relative block bg-blueGray-800">
@@ -433,7 +434,7 @@
   </div>
 </template>
 <script>
-import Navbar from "@/notus/components/Navbars/AuthNavbar.vue";
+import Navbar from "@/notus/components/Navbars/NavigationBar.vue";
 import FooterComponent from "@/notus/components/Footers/Footer.vue";
 import Members from "@/notus/components/Members/Members";
 
