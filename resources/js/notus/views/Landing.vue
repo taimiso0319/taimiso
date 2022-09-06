@@ -18,8 +18,8 @@
         </div>
         <div class="container relative mx-auto">
           <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <div class="pr-12">
+            <div class="w-full lg:w-6/12 ml-auto mr-auto text-center">
+              <div class="p-12">
                 <h1 class="text-white font-semibold text-5xl">
                   Your story starts with us.
                 </h1>
