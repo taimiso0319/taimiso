@@ -21,7 +21,7 @@
             <div class="w-full lg:w-6/12 ml-auto mr-auto text-center">
               <div class="p-12">
                 <h1 class="text-white font-semibold text-5xl">
-                  Kill time to keep a high ratio.
+                  Kill time. <br/> Keep a high ratio.
                 </h1>
                 <p class="mt-4 text-lg text-blueGray-200">
                   Time is a biggest enemy of humanity, then we are playing games to kill it.
