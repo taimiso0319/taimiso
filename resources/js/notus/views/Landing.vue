@@ -24,7 +24,8 @@
                   Kill time. <br/> Keep a high ratio.
                 </h1>
                 <p class="mt-4 text-lg text-blueGray-200">
-                  Time is a biggest enemy of humanity, then we are playing games to kill it.
+                  Time is a biggest enemy of humanity.<br/>
+                  We are playing games to kill it.
                 </p>
               </div>
             </div>
