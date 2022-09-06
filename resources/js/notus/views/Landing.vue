@@ -21,12 +21,10 @@
             <div class="w-full lg:w-6/12 ml-auto mr-auto text-center">
               <div class="p-12">
                 <h1 class="text-white font-semibold text-5xl">
-                  Your story starts with us.
+                  Kill time to keep a high ratio.
                 </h1>
                 <p class="mt-4 text-lg text-blueGray-200">
-                  This is a simple example of a Landing Page you can build using
-                  Vue Notus. It features multiple CSS components based on the
-                  Tailwind CSS design system.
+                  Time is a biggest enemy of humanity, then we are playing games to kill it.
                 </p>
               </div>
             </div>
@@ -279,6 +277,7 @@
       -->
       <members></members>
 
+      <!--
       <section class="pb-20 relative block bg-blueGray-800">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
@@ -302,7 +301,7 @@
 
         <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
           <div class="flex flex-wrap text-center justify-center">
-            <div class="w-full lg:w-6/12 px-4">
+            <div class="w-full lg:w-6/12 px-4 pt-6">
               <h2 class="text-4xl font-semibold text-white">
                 Build something
               </h2>
@@ -429,6 +428,8 @@
           </div>
         </div>
       </section>
+
+      -->
     </main>
     <footer-component />
   </div>
