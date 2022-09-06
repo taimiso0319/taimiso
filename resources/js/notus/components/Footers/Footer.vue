@@ -21,11 +21,15 @@
     </div>
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap text-center lg:text-left">
-        <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl font-semibold text-blueGray-200">Let's keep in touch!</h4>
+
+        <div class="w-full lg:w-6/12 px-4 mb-6">
+          <h4 class="text-3xl font-semibold text-blueGray-200">Thanks for visiting!</h4>
+          <!--
           <h5 class="text-lg mt-0 mb-2 text-blueGray-300">
             Find us on any of these platforms, we respond 1-2 business days.
           </h5>
+          -->
+          <!--
           <div class="mt-6 lg:mb-0 mb-6">
             <button
               class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
@@ -52,9 +56,11 @@
               <i class="fab fa-github"></i>
             </button>
           </div>
+          -->
         </div>
         <div class="w-full lg:w-6/12 px-4">
           <div class="flex flex-wrap items-top mb-6">
+            <!--
             <div class="w-full lg:w-4/12 px-4 ml-auto">
               <span
                 class="block uppercase text-blueGray-200 text-sm font-semibold mb-2"
@@ -96,11 +102,12 @@
                 </li>
               </ul>
             </div>
+            -->
             <div class="w-full lg:w-4/12 px-4">
               <span
                 class="block uppercase text-blueGray-200 text-sm font-semibold mb-2"
               >
-                Other Resources
+                Creative Tim Resources
               </span>
               <ul class="list-unstyled">
                 <li>
@@ -146,12 +153,12 @@
       >
         <div class="w-full md:w-4/12 px-4 mx-auto text-center">
           <div class="text-sm text-blueGray-400 font-semibold py-1">
-            Copyright © {{ date }} Vue Notus by
+            Copyright © {{ date }} Imperial Takashi by
             <a
-              href="https://www.creative-tim.com?ref=vn-footer"
+              href="https://twitter.com/i/user/153415601"
               class="text-blueGray-400 hover:text-blueGray-300"
             >
-              Creative Tim
+              taimiso
             </a>
             .
           </div>
