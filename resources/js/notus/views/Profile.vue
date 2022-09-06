@@ -138,12 +138,14 @@
                     <p v-show="!isLoading" class="mb-4 text-lg leading-relaxed text-blueGray-700">
                       {{ this.profile.twitter.description }}
                     </p>
+                   <!--
                     <a
                         href="javascript:void(0)"
                         class="font-normal text-emerald-500"
                     >
                       Show more
                     </a>
+                    -->
                   </div>
                 </div>
               </div>
