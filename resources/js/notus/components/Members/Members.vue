@@ -3,9 +3,9 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-center text-center mb-24">
         <div class="w-full lg:w-6/12 px-4">
-          <h2 class="text-4xl font-semibold">Here are our players</h2>
+          <h2 class="text-4xl font-semibold">Here are our players.</h2>
           <p class="text-lg leading-relaxed m-4 text-blueGray-500">
-            Either playing game together or alone.<br/> We do what we want.
+            Either playing game together or alone,<br/> we do what we want.
           </p>
         </div>
       </div>
